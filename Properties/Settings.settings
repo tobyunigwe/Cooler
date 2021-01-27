@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="CoolerApplication.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="Facebook_Client_id" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">177666983681951</Value>
+    </Setting>
+    <Setting Name="Facebook_Secret_id" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">2fba4c47d528606384c9921e1fee9bfb</Value>
+    </Setting>
+    <Setting Name="Google_Client_id" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">262497969462-34bvk6fk2qldsmnccejkhplqvnvfsjjd.apps.googleusercontent.com</Value>
+    </Setting>
+    <Setting Name="Google_Secret_id" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">cEeNRqHw-g9rWTg2b64Uha42</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

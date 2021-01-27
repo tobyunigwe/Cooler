@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body style="padding-top: 0;">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <h1 class="navbar-brand">Cooler Application</h1>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+        @if (System.Web.HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <div class="nav-link">@Html.ActionLink("Home", "Index", "Home", new {area = ""}, null)</div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">@Html.ActionLink("Ingredients", "Index", "Ingredient", new {area = ""}, null)</div>
+                </li>
+                <li class="nav-item">
+                    <div class="nav-link">@Html.ActionLink("Recipes", "Index", "Recipe", new {area = ""}, null)</div>
+                </li>
+            </ul>
+        }
+
+        
+        <ul class="nav navbar-nav float-right">
+            <li class="nav-item">
+                <div class="nav-link"> @Html.Partial("_LoginPartial")</div>
+            </li>
+        </ul>
+    </div>
+</nav>
+    <div class="container-sm">
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Cooler Application</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("Scripts", required: false)
+@*<script>setTimeout(function(){
+    window.location.reload(1);
+}, 1000);</script>*@
+</body>
+</html>

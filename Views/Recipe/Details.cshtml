@@ -1,0 +1,41 @@
+﻿@model CoolerApplication.Models.Recipe
+
+@{
+    ViewBag.Title = "Details";
+}
+@Html.Partial(
+    "../Auth/_Auth"
+    )
+<div class="container-sm mt-3">
+
+    <h2>Recipe details</h2>
+
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.RecipeIngredients)
+            </dt>
+
+            <dd>
+                @foreach (var ingredient in Model.RecipeIngredients)
+                {
+                    @Html.DisplayFor(modelItem => ingredient.Ingredient.Name)
+                }
+            </dd>
+
+        </dl>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
